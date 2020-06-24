@@ -28,10 +28,7 @@ const typeDefs = gql`
     }
 
     input CreateDagRapportInput {
-        fieldA: String,
-        fieldB: String,
-        fieldC: String,
-        fieldD: String,
+        date: String
     }
 
     input DagRapportByDateInput{
