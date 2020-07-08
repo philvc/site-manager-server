@@ -5,6 +5,7 @@ const typeDefs = gql`
         user: User,
         dagRapports: [DagRapport]
         dagRapportByDate(input: DagRapportByDateInput): [DagRapport]
+        dagRapportPdf(input: DagRapportPdfInput): String
     }
 
     type Mutation {
@@ -39,6 +40,10 @@ const typeDefs = gql`
         id: String
         field: String,
         data: StringOrIntOrBoolean,
+    }
+
+    input DagRapportPdfInput{
+        id: String
     }
 
     scalar Date

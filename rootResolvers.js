@@ -13,6 +13,7 @@ const resolvers = {
         user: UserResolvers.getUser,
         dagRapports: dagRapportResolvers.getDagRapports,
         dagRapportByDate: dagRapportResolvers.getDagRapportByDate,
+        dagRapportPdf: dagRapportResolvers.getDagRapportPdf,
     },
     Mutation: {
         createDagRapport: dagRapportResolvers.createDagRapport,

@@ -15,6 +15,14 @@ const server = new ApolloServer({
     formatError: (err) => {
         return err;
     },
+    formatResponse: (response, requestContext) => {
+        console.log('requestContext req query', requestContext.request.query.includes('Pdf'))
+        if (requestContext.request.query.includes('Pdf')) {
+            requestContext.response.http.headers.set('content-type', 'application/pdf')
+            requestContext.response.http.headers.set('content-disposition', 'attachment; filename=test.pdf')
+        }
+        return response
+    },
     context: ({ req, res }) => ({ req, res }),
     playground: true,
     introspection: true,
